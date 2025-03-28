@@ -36,20 +36,28 @@ def criar_tarefas(email_usuario,conteudo,status): # Função que pega parametros
     
     try:
         # Insere valores dentro do SQL (email_usuario,conteudo,status)
-        cursor.execute('''INSERT INTO tarefas(email_usuario,conteudo,status,) values (?, ?, ? )''',(email_usuario,conteudo,status))
+        cursor.execute('''INSERT INTO tarefas(email_usuario,conteudo,status) values (?, ?, ? )''',(email_usuario,conteudo,status))
         conexao.commit()
         return True
     except sqlite3.IntegrityError:
         return False
     finally:
-        conexao.close()  
-        
-def logar_usuario(email,senha):
+        conexao.close()
+
+def localizar_usuario(email):
     conexao = conectar_banco()
     cursor = conexao.cursor()
     
+    try:
+        # Insere valores dentro do SQL (email_usuario,conteudo,status)
+        cursor.execute('''SELECT senha FROM usuarios WHERE email=?''',(email,))
+        return cursor.fetchone()
+    except sqlite3.IntegrityError:
+        return False
+    finally:
+        conexao.close()
         
+
 if __name__=="__main__":
     conectar_banco() 
     criar_tabelas()
-    

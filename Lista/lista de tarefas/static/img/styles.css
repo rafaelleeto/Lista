@@ -4,7 +4,7 @@ body{
 
 }
 *{
-    color:white;
+    color:rgb(255, 140, 0);
 }
 
 img {
@@ -46,15 +46,35 @@ div.lado-direito a{
 }
 
 .form-container{
-    background-color: #1a1616;
+    background-color: #4d1d53;
     padding: 30px;
     margin: 5%;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-left: 15%;
     margin-right: 15%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 .form-group {
-    color: #ffffff3d;
+    background-color: #331f3b;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 300%;
+    margin: 1%;
+       
 }
+
+.form-control{
+    width: auto;
+    background-color: #7a3463;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-primary{
+    width: auto;
+    background-color: #331f3b;
+    font-size: 100%;
+
+}
+
