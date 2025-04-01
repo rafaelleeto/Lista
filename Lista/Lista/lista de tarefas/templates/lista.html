@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas!</title>
+    <link rel="stylesheet" href="/static/img/styles.css">
+
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="/criar_tarefa" method="POST">
+            <div class="form-group">
+                <label for="tarefa">Nova Tarefa:</label>
+                <input type="text" id="tarefa" class="form-control" name="tarefa" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar tarefa</button>
+        </form>
+    
+        <div class="Listao mt-4">
+            <h3>Tarefas:</h3>
+            {% for tarefa in tarefas %}
+                <div class="task-item">
+                    <p>
+                        <input type="checkbox" onclick="window.location.href='/marcar_tarefa/{{tarefa[0]}}'" {{"checked" if tarefa[3]=='1' else ""}}>
+                        {{ tarefa[2] }}
+                        <input type="button" value="Excluir" onclick="window.location.href='/excluir_tarefa/{{tarefa[0]}}'"  > 
+                        <input type="button" value="Editar" onclick="window.location.href='/editar_tarefa/{{tarefa[0]}}'"  > 
+
+                        
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <input type="button" class="deletar_conta" value="Deletar Conta" onclick="window.location.href=''"  > 
+
+
+    
+</body>
+</html>
