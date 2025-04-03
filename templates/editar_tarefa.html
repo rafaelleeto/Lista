@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefa!</title>
+    <link rel="stylesheet" href="/static/img/styles.css">
+
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="/editar_tarefa/{{id}}" method="POST">
+            <div class="form-group">
+                <label for="tarefa">Edite a tarefa:</label>
+                <input type="text" id="tarefa" class="form-control" name="tarefa" required value="{{tarefa[2]}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Editar Tarefa</button>
+            
+        </form>
+    
+        
+    </div>
+
+    
+</body>
+</html>
